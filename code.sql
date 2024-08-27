@@ -143,11 +143,11 @@ The final output contains these fields, channel gross_sales_mln percentage 10.*/
         c.channel
 )
 SELECT
-    channel, Concat(Gross_Sales_Mln,'M') as Gross_Sales_Mln,
+    channel, Concat(Gross_Sales_Mln,'M') AS Gross_Sales_Mln,
 Concat(ROUND((Gross_Sales_Mln / SUM(Gross_Sales_Mln) OVER ()) * 100, 2),'%')  AS Percentage_Contribution
 FROM
     cte1
-Order by Gross_Sales_Mln
+ORDER BY Gross_Sales_Mln
 --------------------------------------------------------------------------------------------------------------------------------------------
 /*Task 10 Get the Top 3 products in each division that have a high total_sold_quantity in the fiscal_year 2021?
 The final output contains these fields, division ,product_code,product ,total_sold_quantity, rank_order*/
